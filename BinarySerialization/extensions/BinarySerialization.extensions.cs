@@ -7,27 +7,20 @@ namespace DeepCopyObject.extensions
 {
     public static class BinarySerializationExtensions
     {
-        private static bool IsSerializable<T>(this T obj)
+        public static T BinaryDeepCopy<T>(this T source)
         {
-            if (obj == null)
-                return false;
-
-            Type t = obj.GetType();
-            return t.IsSerializable;
-        }
-        public static T BinaryDeepCopy<T>(this T objectToDeepClone)
-        {
-            if(!objectToDeepClone.IsSerializable())
-                throw new SerializationException("class should be Serializable");
-            
-            using MemoryStream ms = new MemoryStream();
-            BinaryFormatter formatter = new BinaryFormatter
+            if (!typeof(T).IsSerializable)
             {
-                Context = new StreamingContext(StreamingContextStates.Clone)
-            };
-            formatter.Serialize(ms, objectToDeepClone);
-            ms.Position = 0;
-            return (T)formatter.Deserialize(ms);
+                throw new ArgumentException("The type must be serializable.", nameof(source));
+            }
+
+            if (ReferenceEquals(source, null)) return default;
+
+            using Stream stream = new MemoryStream();
+            IFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(stream, source);
+            stream.Seek(0, SeekOrigin.Begin);
+            return (T) formatter.Deserialize(stream);
         }
     }
 }
