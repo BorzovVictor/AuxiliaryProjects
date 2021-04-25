@@ -1,6 +1,7 @@
 using ComplexFaker;
 using DeepCopyObject.extensions;
 using DeepCopyObject.models;
+using FluentAssertions;
 using Xunit;
 
 namespace TestBinarySerialization
@@ -16,8 +17,8 @@ namespace TestBinarySerialization
             PersonModel samePerson = person;
             PersonModel personCopy = person.DeepCopy();
 
-            Assert.Equal(person, samePerson);
-            Assert.NotEqual(person, personCopy);
+            person.Should().NotBeEquivalentTo(personCopy);
+            person.Should().BeEquivalentTo(samePerson);
         }
     }
 }
