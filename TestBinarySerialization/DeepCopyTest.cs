@@ -32,5 +32,27 @@ namespace TestBinarySerialization
             person.Should().NotBeSameAs(personCopy);
             person.Should().BeSameAs(samePerson);
         }
+        
+        [Fact]
+        public void ICloneable_ShouldCreateDeepCopyOfObject_WithCast()
+        {
+            PersonCloneable person = faker.GenerateComplex<PersonCloneable>();
+            PersonCloneable samePerson = person;
+            PersonCloneable personCopy = person.Clone() as PersonCloneable;
+            
+            person.Should().NotBeSameAs(personCopy);
+            person.Should().BeSameAs(samePerson);
+        }
+        
+        [Fact]
+        public void IPrototype_ShouldCreateDeepCopyOfObject_WithoutCast()
+        {
+            PersonPrototype person = faker.GenerateComplex<PersonPrototype>();
+            PersonPrototype samePerson = person;
+            PersonPrototype personCopy = person.CreateDeepCopy();
+            
+            person.Should().NotBeSameAs(personCopy);
+            person.Should().BeSameAs(samePerson);
+        }
     }
 }
