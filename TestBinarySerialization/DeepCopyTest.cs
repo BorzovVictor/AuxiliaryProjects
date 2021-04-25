@@ -7,7 +7,7 @@ namespace TestBinarySerialization
 {
     public class DeepCopyTest
     {
-        IFakeDataService faker = new FakeDataService();
+        readonly IFakeDataService faker = new FakeDataService();
 
         [Fact]
         public void ShouldCreateDeepCopyOfObject()
