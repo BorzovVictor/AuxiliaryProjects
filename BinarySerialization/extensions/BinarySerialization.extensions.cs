@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DeepCopyObject.extensions
 {
-    public static class ObjectExtensions
+    public static class BinarySerializationExtensions
     {
         private static bool IsSerializable<T>(this T obj)
         {
@@ -15,7 +15,7 @@ namespace DeepCopyObject.extensions
             Type t = obj.GetType();
             return t.IsSerializable;
         }
-        public static T DeepCopy<T>(this T objectToDeepClone)
+        public static T BinaryDeepCopy<T>(this T objectToDeepClone)
         {
             if(!objectToDeepClone.IsSerializable())
                 throw new SerializationException("class should be Serializable");

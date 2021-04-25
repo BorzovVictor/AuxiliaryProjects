@@ -2,6 +2,7 @@ using ComplexFaker;
 using DeepCopyObject.extensions;
 using DeepCopyObject.models;
 using FluentAssertions;
+using XMLSerialization;
 using Xunit;
 
 namespace TestBinarySerialization
@@ -11,14 +12,25 @@ namespace TestBinarySerialization
         readonly IFakeDataService faker = new FakeDataService();
 
         [Fact]
-        public void ShouldCreateDeepCopyOfObject()
+        public void BinarySerialization_ShouldCreateDeepCopyOfObject()
         {
-            PersonModel person = faker.GenerateComplex<PersonModel>();
-            PersonModel samePerson = person;
-            PersonModel personCopy = person.DeepCopy();
-
-            person.Should().NotBeEquivalentTo(personCopy);
-            person.Should().BeEquivalentTo(samePerson);
+            PersonForBinary person = faker.GenerateComplex<PersonForBinary>();
+            PersonForBinary samePerson = person;
+            PersonForBinary personCopy = person.BinaryDeepCopy();
+            
+            person.Should().NotBeSameAs(personCopy);
+            person.Should().BeSameAs(samePerson);
+        }
+        
+        [Fact]
+        public void XMLSerialization_ShouldCreateDeepCopyOfObject()
+        {
+            PersonForXml person = faker.GenerateComplex<PersonForXml>();
+            PersonForXml samePerson = person;
+            PersonForXml personCopy = person.XMLDeepCopy();
+            
+            person.Should().NotBeSameAs(personCopy);
+            person.Should().BeSameAs(samePerson);
         }
     }
 }
