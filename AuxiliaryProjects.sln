@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1FE9AA9E-ACA0-404C-A0CF-59869A13292D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySerialization", "BinarySerialization\BinarySerialization.csproj", "{1B5F8511-B0F4-4A47-A94C-92718135A943}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloneObject", "CloneObject", "{12846450-2535-4151-8747-60716FCDD7A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E378B115-638D-41E4-878C-5A3D146D6BB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloneObjectTests", "CloneObjectTests", "{571C126A-CE3D-4DB9-8F1C-DB3F63A30AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBinarySerialization", "TestBinarySerialization\TestBinarySerialization.csproj", "{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12846450-2535-4151-8747-60716FCDD7A6} = {1FE9AA9E-ACA0-404C-A0CF-59869A13292D}
+		{1B5F8511-B0F4-4A47-A94C-92718135A943} = {12846450-2535-4151-8747-60716FCDD7A6}
+		{571C126A-CE3D-4DB9-8F1C-DB3F63A30AF2} = {E378B115-638D-41E4-878C-5A3D146D6BB3}
+		{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17} = {571C126A-CE3D-4DB9-8F1C-DB3F63A30AF2}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B968A7-8DBC-4A21-B1CC-FB290BD61E17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
