@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ComplexFaker;
 using DeepCopyObject.extensions;
 using DeepCopyObject.models;
@@ -12,7 +13,7 @@ namespace TestBinarySerialization
         readonly IFakeDataService faker = new FakeDataService();
 
         [Fact]
-        public void BinarySerialization_ShouldCreateDeepCopyOfObject()
+        public void BinaryClone_ShouldCreateDeepCopyOfObject()
         {
             PersonForBinary person = faker.GenerateComplex<PersonForBinary>();
             PersonForBinary samePerson = person;
@@ -23,7 +24,18 @@ namespace TestBinarySerialization
         }
         
         [Fact]
-        public void XMLSerialization_ShouldCreateDeepCopyOfObject()
+        public void BinaryClone_ShouldCreateDeepCopyListOfObject()
+        {
+            List<PersonForBinary> persons = faker.GenerateComplex<List<PersonForBinary>>();
+            List<PersonForBinary> samePersons = persons;
+            List<PersonForBinary> personsCopy = persons.BinaryDeepCopy();
+            
+            persons.Should().NotBeSameAs(personsCopy);
+            persons.Should().BeSameAs(samePersons);
+        }
+        
+        [Fact]
+        public void XMLClone_ShouldCreateDeepCopyOfObject()
         {
             PersonForXml person = faker.GenerateComplex<PersonForXml>();
             PersonForXml samePerson = person;
