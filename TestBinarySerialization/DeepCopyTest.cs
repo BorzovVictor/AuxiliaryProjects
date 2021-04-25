@@ -17,7 +17,7 @@ namespace TestBinarySerialization
         {
             PersonForBinary person = faker.GenerateComplex<PersonForBinary>();
             PersonForBinary samePerson = person;
-            PersonForBinary personCopy = person.BinaryDeepCopy();
+            PersonForBinary personCopy = person.BinaryDeepClone();
             
             person.Should().NotBeSameAs(personCopy);
             person.Should().BeSameAs(samePerson);
@@ -28,7 +28,7 @@ namespace TestBinarySerialization
         {
             List<PersonForBinary> persons = faker.GenerateComplex<List<PersonForBinary>>();
             List<PersonForBinary> samePersons = persons;
-            List<PersonForBinary> personsCopy = persons.BinaryDeepCopy();
+            List<PersonForBinary> personsCopy = persons.BinaryDeepClone();
             
             persons.Should().NotBeSameAs(personsCopy);
             persons.Should().BeSameAs(samePersons);
@@ -39,7 +39,7 @@ namespace TestBinarySerialization
         {
             PersonForXml person = faker.GenerateComplex<PersonForXml>();
             PersonForXml samePerson = person;
-            PersonForXml personCopy = person.XMLDeepCopy();
+            PersonForXml personCopy = person.XMLDeepClone();
             
             person.Should().NotBeSameAs(personCopy);
             person.Should().BeSameAs(samePerson);

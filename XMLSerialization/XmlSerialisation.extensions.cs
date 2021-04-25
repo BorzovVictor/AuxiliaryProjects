@@ -5,7 +5,7 @@ namespace XMLSerialization
 {
     public static class XmlSerialisationExtensions
     {
-        public static T XMLDeepCopy<T>(this T objectToClone)
+        public static T XMLDeepClone<T>(this T objectToClone)
         {
             using var ms = new MemoryStream();
             XmlSerializer serializer = new XmlSerializer(objectToClone.GetType());
