@@ -24,7 +24,7 @@ namespace TestBinarySerialization
         }
         
         [Fact]
-        public void BinaryClone_ShouldCreateDeepCopyListOfObject()
+        public void BinaryClone_ShouldCreateDeepCopyOfObjectList()
         {
             List<PersonForBinary> persons = faker.GenerateComplex<List<PersonForBinary>>();
             List<PersonForBinary> samePersons = persons;
@@ -40,6 +40,17 @@ namespace TestBinarySerialization
             PersonForXml person = faker.GenerateComplex<PersonForXml>();
             PersonForXml samePerson = person;
             PersonForXml personCopy = person.XMLDeepClone();
+            
+            person.Should().NotBeSameAs(personCopy);
+            person.Should().BeSameAs(samePerson);
+        }
+        
+        [Fact]
+        public void XMLClone_ShouldCreateDeepCopyOfObjectList()
+        {
+            List<PersonForXml> person = faker.GenerateComplex<List<PersonForXml>>();
+            List<PersonForXml> samePerson = person;
+            List<PersonForXml> personCopy = person.XMLDeepClone();
             
             person.Should().NotBeSameAs(personCopy);
             person.Should().BeSameAs(samePerson);
