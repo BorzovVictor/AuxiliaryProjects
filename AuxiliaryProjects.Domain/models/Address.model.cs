@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using CloneObject.Domain.interfaces;
+using AuxiliaryProjects.Domain.interfaces;
 
-namespace DeepCopyObject.models
+namespace AuxiliaryProjects.Domain.models
 {
     public class AddressCloneable : ICloneable
     {
@@ -33,7 +32,7 @@ namespace DeepCopyObject.models
         public string Street { get; set; }
     }
     
-    public class AddressForXML
+    public class Address
     {
         public string City { get; set; }
         public string Street { get; set; }

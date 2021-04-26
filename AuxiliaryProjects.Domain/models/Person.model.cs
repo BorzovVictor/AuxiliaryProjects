@@ -1,7 +1,7 @@
 ﻿using System;
-using CloneObject.Domain.interfaces;
+using AuxiliaryProjects.Domain.interfaces;
 
-namespace DeepCopyObject.models
+namespace AuxiliaryProjects.Domain.models
 {
     
     public class PersonCloneable : ICloneable
@@ -40,10 +40,10 @@ namespace DeepCopyObject.models
         public AddressForBinary Address { get; set; }
     }
     
-    public class PersonForXml
+    public class Person
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public AddressForXML Address { get; set; }
+        public Address Address { get; set; }
     }
 }

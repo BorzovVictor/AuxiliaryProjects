@@ -18,6 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AuxiliaryProjects.Domain\AuxiliaryProjects.Domain.csproj" />
       <ProjectReference Include="..\BinarySerialization\BinarySerialization.csproj" />
       <ProjectReference Include="..\CloneObject.Domain\CloneObject.Domain.csproj" />
       <ProjectReference Include="..\XMLSerialization\XMLSerialization.csproj" />

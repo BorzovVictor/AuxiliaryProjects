@@ -1,4 +1,4 @@
-﻿namespace CloneObject.Domain.interfaces
+﻿namespace AuxiliaryProjects.Domain.interfaces
 {
     public interface IPrototype<T>
     {
