@@ -4,8 +4,6 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
-
-        <RootNamespace>TestBinarySerialization</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,9 +16,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AuxiliaryProjects.Domain\AuxiliaryProjects.Domain.csproj" />
+      <ProjectReference Include="..\AuxiliaryProjects.Core\AuxiliaryProjects.Core.csproj" />
       <ProjectReference Include="..\BinarySerialization\BinarySerialization.csproj" />
       <ProjectReference Include="..\CloneObject.Domain\CloneObject.Domain.csproj" />
+      <ProjectReference Include="..\CloneObject\CloneObject.csproj" />
       <ProjectReference Include="..\XMLSerialization\XMLSerialization.csproj" />
     </ItemGroup>
 

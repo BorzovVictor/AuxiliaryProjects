@@ -1,7 +1,7 @@
 ﻿using System;
-using AuxiliaryProjects.Domain.interfaces;
+using AuxiliaryProjects.Core.interfaces;
 
-namespace AuxiliaryProjects.Domain.models
+namespace AuxiliaryProjects.Core.models
 {
     public class AddressCloneable : ICloneable
     {

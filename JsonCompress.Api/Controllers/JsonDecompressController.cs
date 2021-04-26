@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using System.Threading.Tasks;
-using AuxiliaryProjects.Domain.models;
+using AuxiliaryProjects.Core.models;
 using JsonCompress.Api.extensions;
 using Microsoft.AspNetCore.Mvc;
 

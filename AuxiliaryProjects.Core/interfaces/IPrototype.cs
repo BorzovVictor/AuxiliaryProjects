@@ -1,4 +1,4 @@
-﻿namespace AuxiliaryProjects.Domain.interfaces
+﻿namespace AuxiliaryProjects.Core.interfaces
 {
     public interface IPrototype<T>
     {
